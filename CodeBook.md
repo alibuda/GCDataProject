@@ -4,7 +4,7 @@
 
 ##Variable.name and Description
 
- Index			Variable.name					Description
+			Variable.name					Description
 	
 	1		Sbuject							Sbuject
 	2		Act								activity
