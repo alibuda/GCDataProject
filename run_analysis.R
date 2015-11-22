@@ -1,3 +1,4 @@
+library(plyr)
 feature.names <- read.table("~/UCI HAR Dataset/features.txt",header = F)
 temp <- strsplit(as.character(feature.names$V2),split = '-',fixed = T)
 col.mean.log <- unlist(lapply(temp,function(x) any(x=='mean()')))
@@ -7,7 +8,7 @@ col.mean.names <- unlist(lapply(temp1,function(x) ifelse(length(x)==3,paste(x[1]
 col.std.log <- unlist(lapply(temp,function(x) any(x=='std()')))
 col.std.log <- which(col.std.log)
 temp2 <- temp[col.std.log]
-col.std.names <- unlist(lapply(temp1,function(x) ifelse(length(x)==3,paste(x[1],"S",x[3],sep = ''),paste(x[1],"S",sep = ''))))
+col.std.names <- unlist(lapply(temp2,function(x) ifelse(length(x)==3,paste(x[1],"S",x[3],sep = ''),paste(x[1],"S",sep = ''))))
 ext.col <- data.frame(col.num = c(col.mean.log,col.std.log),col.name = c(col.mean.names,col.std.names))
 ext.col <- arrange(ext.col,col.num)
 
