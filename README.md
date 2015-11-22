@@ -2,8 +2,8 @@
 ===========
 Put the Samsung data is in your working directory. after running the R script [run_analysis](https://github.com/alibuda/GCDataProject/blob/master/run_analysis.R) ,You will get the output text file named "resultData".
 
-##Processing detail
-===========
+Processing detail:
+
 1.Load text file "features.txt" , which includes the whole 561 features of the raw data in the train data set and the test data set.We just choose the 66 features whose names contains "mean()" or "std()".Then, rename the features : replace "-mean()-" with "M" and replace "-std()-" with "S".Make a data.frame named "ext.col", which contains the index and new name of the feature you need
 1.Load the raw train data from "X_train.txt", and Extract the features in the "ext.col" which we prepared upper. Get a new data.frame named "train.data"
 1.Load the Training labels from "y_train.txt", and insert it to the data.frame "train.data" as variable Act
